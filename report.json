@@ -1,0 +1,47 @@
+{
+    "last_check": "09 Oct 2026, 15:36:48 WIB",
+    "total_warnings": 0,
+    "violations": [],
+    "pages_status": [
+        {
+            "name": "Sisi Lain",
+            "status": "Aman",
+            "badge": "success"
+        },
+        {
+            "name": "Titik Temu",
+            "status": "Aman",
+            "badge": "success"
+        },
+        {
+            "name": "Dengerin Dulu",
+            "status": "Aman",
+            "badge": "success"
+        },
+        {
+            "name": "Meong Story",
+            "status": "Aman",
+            "badge": "success"
+        },
+        {
+            "name": "Ruang Cerita",
+            "status": "Aman",
+            "badge": "success"
+        },
+        {
+            "name": "Jejak Kisah",
+            "status": "Aman",
+            "badge": "success"
+        },
+        {
+            "name": "Cerita senja",
+            "status": "Aman",
+            "badge": "success"
+        },
+        {
+            "name": "Lucius",
+            "status": "Aman",
+            "badge": "success"
+        }
+    ]
+}
