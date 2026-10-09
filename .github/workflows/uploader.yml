@@ -1,0 +1,41 @@
+name: Facebook Auto Uploader
+
+on:
+  workflow_dispatch: # Dipicu secara otomatis via API cron-job.org / Manual dari tab Actions
+
+permissions:
+  contents: write
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests gdown
+
+      - name: Run Upload Script
+        env:
+          FB_PAGES_DATA: ${{ secrets.FB_PAGES_DATA }}
+        run: python upload.py
+
+      - name: Commit and Push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add videos.json
+          git stash
+          git pull origin main --rebase
+          git stash pop || true
+          git add videos.json
+          git commit -m "Auto-update status video setelah unggah" || exit 0
+          git push origin main
